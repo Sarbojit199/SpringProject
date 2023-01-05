@@ -21,8 +21,13 @@ public class User {
 		private int id;
 	
 		@Column(name="user_name",nullable=false)
+		@NotBlank(message="username should not be blank")
 		private String name;
+		
+		@NotBlank(message="email should not be null")
+		@Size(min=10,message="email should be of 10 char")
 		private String email;
+		@Size(min=5,message="password should be of 5 char")
 		private String password;
 		private String about;
 		

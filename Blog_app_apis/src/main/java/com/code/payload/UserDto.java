@@ -7,8 +7,12 @@ import jakarta.persistence.Id;
 public class UserDto {
 	
 	private int id;
+	@NotBlank(message="username should not be blank")
 	private String name;
+	@NotBlank(message="email should not be null")
+	@Size(min=10,message="email should be of 10 char")
 	private String email;
+	@Size(min=5,message="password should be of 5 char")
 	private String password;
 	private String about;
 	public UserDto() {
